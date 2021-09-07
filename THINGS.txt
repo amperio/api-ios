@@ -1,5 +1,0 @@
-type User @model(class: "Joselfonseca\\LighthouseGraphQLPassport\\Tests\\User") {
-    id: ID!
-    name: String!
-    email: String!
-}
