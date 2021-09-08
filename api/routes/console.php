@@ -19,8 +19,8 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote');
 Artisan::command('user', function () {
     User::create([
-        'name' => 'Jose Fonseca',
-        'email' => 'myemail@email.com',
-        'password' => bcrypt('123456789qq')
+        'name' => 'Admin',
+        'email' => 'admin@email.com',
+        'password' => bcrypt('admin@90')
     ]);
 })->describe('Create sample user');

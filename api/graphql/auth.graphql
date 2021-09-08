@@ -15,6 +15,23 @@ type User {
     updated_at: DateTime!
 }
 
+type TypeTransaction {
+    id: ID!
+    name: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
+type Wallet {
+    id: ID!
+    user: User
+    type: TypeTransaction!
+    value: String!
+    description: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
 type AuthPayload {
     access_token: String
     refresh_token: String
@@ -53,6 +70,14 @@ type UpdatePasswordResponse {
 enum RegisterStatuses {
     MUST_VERIFY_EMAIL
     SUCCESS
+}
+
+
+input inputWallet {
+    user_id : User
+    type_transaction_id : TypeTransaction!
+    value: String!
+    description: String!
 }
 
 input ForgotPasswordInput {
