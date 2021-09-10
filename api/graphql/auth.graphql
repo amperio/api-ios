@@ -73,9 +73,15 @@ enum RegisterStatuses {
 }
 
 
-input inputWallet {
-    user_id : User
-    type_transaction_id : TypeTransaction!
+input inputWalletCreate {
+    user_id : ID!
+    type_transaction_id : ID!
+    value: String!
+    description: String!
+}
+
+input inputWalletUpdate {
+    id: ID!
     value: String!
     description: String!
 }
