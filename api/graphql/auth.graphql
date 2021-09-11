@@ -13,6 +13,7 @@ type User {
     email: String!
     created_at: DateTime!
     updated_at: DateTime!
+    wallets: [Wallet]! @hasmany
 }
 
 type TypeTransaction {
@@ -24,8 +25,8 @@ type TypeTransaction {
 
 type Wallet {
     id: ID!
-    user: User
-    type: TypeTransaction!
+    user: [User]! @belongsTo
+    type: TypeTransaction! @belongsTo
     value: String!
     description: String!
     created_at: DateTime!
@@ -74,8 +75,8 @@ enum RegisterStatuses {
 
 
 input inputWalletCreate {
-    user_id : ID!
-    type_transaction_id : ID!
+    user_id : Int!
+    type_transaction_id : Int!
     value: String!
     description: String!
 }
