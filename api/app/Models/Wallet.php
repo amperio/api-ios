@@ -10,8 +10,10 @@ class Wallet extends Model
     protected $fillable = [
         'user_id',
         'type_transaction_id',
+        'name',
         'value',
         'description',
+        'date',
     ];
 
     public function type(){

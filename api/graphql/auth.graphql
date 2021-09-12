@@ -27,8 +27,10 @@ type Wallet {
     id: ID!
     user: [User]! @belongsTo
     type: TypeTransaction! @belongsTo
+    name: String!
     value: String!
     description: String!
+    date: Date!
     created_at: DateTime!
     updated_at: DateTime!
 }
@@ -77,14 +79,18 @@ enum RegisterStatuses {
 input inputWalletCreate {
     user_id : Int!
     type_transaction_id : Int!
+    name: String!
     value: String!
     description: String!
+    date: Date!
 }
 
 input inputWalletUpdate {
     id: ID!
+    name: String!
     value: String!
     description: String!
+    date: Date!
 }
 
 input ForgotPasswordInput {
